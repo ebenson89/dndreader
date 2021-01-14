@@ -1,0 +1,25 @@
+#Set up dice roller logic
+
+import random
+
+#Roll how_manyDkind of dice
+def roll_dice(how_many, kind):
+    
+    for x in range (1, how_many + 1):
+        print (random.randint(1,kind + 1))
+    
+
+
+
+
+def main():
+    roll_dice(3,12)
+
+
+
+
+
+
+#This little chunk of code allows this python program to be either used directly or imported into another program
+if __name__ == "__main__":
+    main()    
