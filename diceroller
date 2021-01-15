@@ -35,15 +35,11 @@ def random_entry(data_dict):
     for key in data_dict:
         key_list.append(key)
     
-    #Find file length
-    file_length = len(data_dict) - 1
     #Roll random number
-    index = random.randint(0,file_length)
-    name = key_list[index]
-    description = str(name) + ": " + str(data_dict[name])
+    index = random.randint(0,len(data_dict) - 1)
 
     #Use index and key list to locate key and value in the dict
-    return (description)
+    return (str(key_list[index]) + ": " + str(data_dict[key_list[index]]))
 
 
 def main():
