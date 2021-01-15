@@ -19,9 +19,20 @@ def roll_dice(how_many, kind):
 
     return (output_str)
 
+#Choose a random entry from a json file
+def random_entry(file_name):
+    #Find file length
+    file_length = 10 #placeholder until json file example is ready
+    #Roll random number
+    index = random.randint(1,file_length)
+    return (index)
+
+    #Use the index to find entry in the json file and return that entry
+
 
 def main():
-    print (roll_dice(3,12))
+    print ("Dice roller: ", roll_dice(3,12))
+    print ("Entry finder index: ", random_entry("file_name"))
 
 #This little chunk of code allows this python program to be either used directly or imported into another program
 if __name__ == "__main__":
