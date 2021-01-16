@@ -47,9 +47,9 @@ def random_entry(data_dict):
 def main():
     print ("Hello World!")
 
-    #print ("Random Item from the test file: ", random_entry(get_data(json_file_name)))
-    #print ("Data in file: ", get_data(json_file_name))
-    #print ("Dice roller: ", roll_dice(3,12))
+    print ("Random Item from the test file: ", random_entry(get_data(json_file_name)))
+    print ("Data in file: ", get_data(json_file_name))
+    print ("Dice roller: ", roll_dice(3,12))
 
 #This little chunk of code allows this python program to be either used directly or imported into another program
 if __name__ == "__main__":
