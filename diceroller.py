@@ -29,15 +29,15 @@ def roll_dice(how_many, kind):
 
     return (output_str)
 
+#Choose a random item from the file
 def random_entry(data_dict):
     key = random.choice(list(data_dict.keys()))
     return (key + ": " + data_dict[key])
 
-
 def main():
-    #print ("Hello World!")
+    print ("Hello World!")
 
-    print ("Random Item from the test file: ", random_entry(get_data(json_file_name)))
+    #print ("Random Item from the test file: ", random_entry(get_data(json_file_name)))
     #print ("Data in file: ", get_data(json_file_name))
     #print ("Dice roller: ", roll_dice(3,12))
 
