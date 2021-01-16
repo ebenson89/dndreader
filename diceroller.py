@@ -29,27 +29,17 @@ def roll_dice(how_many, kind):
 
     return (output_str)
 
-#Choose a random entry from a dict
 def random_entry(data_dict):
-    #Key list
-    key_list = []
-    #Get a list of keys
-    for key in data_dict:
-        key_list.append(key)
-    
-    #Roll random number
-    index = random.randint(0,len(data_dict) - 1)
-
-    #Use index and key list to locate key and value in the dict
-    return (str(key_list[index]) + ": " + str(data_dict[key_list[index]]))
+    key = random.choice(list(data_dict.keys()))
+    return (key + ": " + data_dict[key])
 
 
 def main():
-    print ("Hello World!")
+    #print ("Hello World!")
 
     print ("Random Item from the test file: ", random_entry(get_data(json_file_name)))
-    print ("Data in file: ", get_data(json_file_name))
-    print ("Dice roller: ", roll_dice(3,12))
+    #print ("Data in file: ", get_data(json_file_name))
+    #print ("Dice roller: ", roll_dice(3,12))
 
 #This little chunk of code allows this python program to be either used directly or imported into another program
 if __name__ == "__main__":
