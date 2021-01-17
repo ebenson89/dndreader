@@ -2,12 +2,13 @@
 
 import json
 import random
+import os
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
 qtCreatorFile = "mainwindow.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-json_file_path = "datafiles\TestMagicItems.json" #Test File
+json_file_path = r"datafiles\TestMagicItems.json" #Test File
 
 class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -16,6 +17,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.roll_dice_button.clicked.connect(self.roll_dice)
         self.random_item_button.clicked.connect(self.random_entry)
+        self.all_files_button.clicked.connect(self.files_in_data_folder)
 
     #Pull data from file
     def get_data(self, file_name):
@@ -58,6 +60,15 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         key = random.choice(list(data_dict.keys()))
         #Print out key and value in a string
         self.random_item_output.setText(key + ": " + data_dict[key])
+
+    def files_in_data_folder(self):
+        file_names = []
+
+        for _ , _ ,file_name in os.walk("datafiles"):
+            if file_name[0][-5:] == ".json":
+                file_names += file_name
+
+        self.file_list_output.setText(str(file_names))
 
 #def main():
     #print ("Hello World!")
