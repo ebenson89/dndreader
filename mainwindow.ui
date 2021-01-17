@@ -43,6 +43,12 @@
     </item>
     <item row="1" column="3">
      <widget class="QLineEdit" name="kind_box">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="inputMethodHints">
        <set>Qt::ImhNone</set>
       </property>

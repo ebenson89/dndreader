@@ -7,7 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
 qtCreatorFile = "mainwindow.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-json_file_name = "TestMagicItems.json"
+json_file_name = "TestMagicItems.json" #Test File
 
 class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
