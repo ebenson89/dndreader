@@ -15,6 +15,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.roll_dice_button.clicked.connect(self.roll_dice)
+        self.random_item_button.clicked.connect(self.random_entry)
 
     #Pull data from file
     def get_data(self, file_name):
@@ -25,27 +26,38 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     #Roll how_manyDkind of dice
     def roll_dice(self):
+        #User Input
         how_many = int(self.how_many_box.text())
         kind = int(self.kind_box.text())
+        #Total variables
         total = 0
         output_str = str(how_many) + "d" + str(kind) + ": "
         
         #Roll the choosen dice how_many times
         for x in range (1, how_many + 1):
+            #Pick a random number
             number = random.randint(1,kind)
+            #Add number to the total
             total += number
+            #Add the number to the output string
             output_str = output_str + (str(number))
+            #Add addition symbols between the numbers in the string
             if 0 < x < how_many:
                 output_str = output_str + (" + ")
 
+        #Add on the total to the output string
         output_str = output_str + (" = ") + str(total)
-
+        #Print out string
         self.results_output.setText(output_str)
 
     #Choose a random item from the file
-    def random_entry(self, data_dict):
+    def random_entry(self):
+        #Grab the data from the choosen file
+        data_dict = self.get_data(json_file_name)
+        #Randomly choose a key
         key = random.choice(list(data_dict.keys()))
-        return (key + ": " + data_dict[key])
+        #Print out key and value in a string
+        self.random_item_output.setText(key + ": " + data_dict[key])
 
 #def main():
     #print ("Hello World!")

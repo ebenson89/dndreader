@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>394</width>
-    <height>273</height>
+    <width>392</width>
+    <height>307</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,10 +15,29 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="how_many_box">
+    <item row="4" column="2">
+     <widget class="QLabel" name="results_output">
       <property name="text">
-       <string>1</string>
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="dice">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>d</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="random_item_button">
+      <property name="text">
+       <string>Choose a random Item</string>
       </property>
      </widget>
     </item>
@@ -42,36 +61,54 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="4">
-     <widget class="QLabel" name="Title">
+    <item row="5" column="2">
+     <widget class="QLabel" name="Random_Item_lable">
       <property name="font">
        <font>
+        <family>Mistral</family>
         <pointsize>28</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Random Item</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLabel" name="random_item_output">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QLabel" name="roll_the_dice_label">
+      <property name="font">
+       <font>
+        <family>Lucida Sans Typewriter</family>
+        <pointsize>28</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="text">
        <string>Roll The Dice!</string>
       </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="dice">
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>d</string>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QLabel" name="results_output">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="how_many_box">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="text">
-       <string/>
+       <string>1</string>
       </property>
      </widget>
     </item>
@@ -82,7 +119,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>394</width>
+     <width>392</width>
      <height>22</height>
     </rect>
    </property>
