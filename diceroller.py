@@ -7,7 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
 qtCreatorFile = "mainwindow.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-json_file_name = "TestMagicItems.json" #Test File
+json_file_path = "datafiles\TestMagicItems.json" #Test File
 
 class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -53,7 +53,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     #Choose a random item from the file
     def random_entry(self):
         #Grab the data from the choosen file
-        data_dict = self.get_data(json_file_name)
+        data_dict = self.get_data(json_file_path)
         #Randomly choose a key
         key = random.choice(list(data_dict.keys()))
         #Print out key and value in a string
