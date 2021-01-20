@@ -5,8 +5,9 @@ import random
 import os
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
+from PyQt5.QtWidgets import *
 
-qtCreatorFile = "mainwindow.ui" # Enter file here.
+qtCreatorFile = "mainwindow.ui" # GUI Design file
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 json_file_path = r"datafiles\TestMagicItems.json" #Test File
 
@@ -68,14 +69,8 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if file_name[0][-5:] == ".json":
                 file_names += file_name
 
-        self.file_list_output.setText(str(file_names))
+            return (file_names)
 
-#def main():
-    #print ("Hello World!")
-
-    #print ("Random Item from the test file: ", random_entry(get_data(json_file_name)))
-    #print ("Data in file: ", get_data(json_file_name))
-    #print ("Dice roller: ", roll_dice(3,12))
 
 #This little chunk of code allows this python program to be either used directly or imported into another program
 if __name__ == "__main__":

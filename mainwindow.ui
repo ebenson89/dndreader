@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>413</height>
+    <width>390</width>
+    <height>429</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,6 +15,25 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="11" column="2">
+     <widget class="QTreeWidget" name="treeWidget">
+      <column>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="how_many_box">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
     <item row="8" column="2">
      <widget class="QLabel" name="all_files_label">
       <property name="font">
@@ -46,6 +65,57 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="dice">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>d</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QPushButton" name="all_files_button">
+      <property name="text">
+       <string>All files</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="results_output">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QLabel" name="roll_the_dice_label">
+      <property name="font">
+       <font>
+        <family>Lucida Sans Typewriter</family>
+        <pointsize>28</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Roll The Dice!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLabel" name="random_item_output">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
     <item row="6" column="2">
      <widget class="QPushButton" name="random_item_button">
       <property name="text">
@@ -69,32 +139,6 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QLabel" name="results_output">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="dice">
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>d</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="2">
-     <widget class="QPushButton" name="all_files_button">
-      <property name="text">
-       <string>All files</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="1" colspan="3">
      <widget class="QPushButton" name="roll_dice_button">
       <property name="text">
@@ -102,47 +146,8 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="2">
-     <widget class="QLabel" name="random_item_output">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="how_many_box">
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="4">
-     <widget class="QLabel" name="roll_the_dice_label">
-      <property name="font">
-       <font>
-        <family>Lucida Sans Typewriter</family>
-        <pointsize>28</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Roll The Dice!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item row="10" column="2">
-     <widget class="QLabel" name="file_list_output">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+     <widget class="QListWidget" name="listWidget"/>
     </item>
    </layout>
   </widget>
@@ -151,7 +156,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>392</width>
+     <width>390</width>
      <height>22</height>
     </rect>
    </property>
