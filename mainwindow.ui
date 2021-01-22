@@ -36,7 +36,7 @@
        </sizepolicy>
       </property>
       <property name="inputMethodHints">
-       <set>Qt::ImhNone</set>
+       <set>Qt::ImhDigitsOnly</set>
       </property>
       <property name="text">
        <string>20</string>
@@ -55,7 +55,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Random Item</string>
+       <string>Random Entry</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -68,7 +68,7 @@
     <item row="8" column="2">
      <widget class="QPushButton" name="random_item_button">
       <property name="text">
-       <string>Choose a random Item</string>
+       <string>Choose a random entry</string>
       </property>
      </widget>
     </item>
@@ -106,8 +106,14 @@
     </item>
     <item row="1" column="1">
      <widget class="QLineEdit" name="how_many_box">
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly</set>
       </property>
       <property name="text">
        <string>1</string>

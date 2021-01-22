@@ -6,6 +6,7 @@ import os
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIntValidator
 
 start_folder = "datafiles\\"
 json_file_path = ""
@@ -17,6 +18,8 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+        self.how_many_box.setValidator(QIntValidator(0, 100, self))
+        self.kind_box.setValidator(QIntValidator(0, 100, self))
         self.files_in_data_folder()
         self.roll_dice_button.clicked.connect(self.roll_dice)
         self.random_item_button.clicked.connect(self.random_entry)
@@ -27,7 +30,6 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         global json_file_path
         item = self.files_list_output.currentItem()
         json_file_path = start_folder + item.text()
-        print (json_file_path)
     
     #Pull data from file
     def get_data(self, file_name):
@@ -39,22 +41,22 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     #Roll how_manyDkind of dice
     def roll_dice(self):
         #User Input
-        how_many = int(self.how_many_box.text())
-        kind = int(self.kind_box.text())
+        how_many = self.how_many_box.text()
+        kind = self.kind_box.text()
         #Total variables
         total = 0
-        output_str = str(how_many) + "d" + str(kind) + ": "
+        output_str = how_many + "d" + kind + ": "
         
         #Roll the choosen dice how_many times
-        for x in range (1, how_many + 1):
+        for x in range (1, int(how_many) + 1):
             #Pick a random number
-            number = random.randint(1,kind)
+            number = random.randint(1, int(kind))
             #Add number to the total
             total += number
             #Add the number to the output string
             output_str = output_str + (str(number))
             #Add addition symbols between the numbers in the string
-            if 0 < x < how_many:
+            if 0 < x < int(how_many):
                 output_str = output_str + (" + ")
 
         #Add on the total to the output string
