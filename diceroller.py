@@ -7,13 +7,13 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import *
 
+start_folder = "datafiles\\"
+json_file_path = ""
 qtCreatorFile = "mainwindow.ui" # GUI Design file
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
-        start_folder = r"datafiles\""
-        json_file_path = r""
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
@@ -22,9 +22,11 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.random_item_button.clicked.connect(self.random_entry)
         self.files_list_output.clicked.connect(self.choose_file)
 
+    #Choose a file from the data folder
     def choose_file(self, qmodelindex):
+        global json_file_path
         item = self.files_list_output.currentItem()
-        json_file_path = start_folder + item
+        json_file_path = start_folder + item.text()
         print (json_file_path)
     
     #Pull data from file
@@ -64,7 +66,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def random_entry(self):
 
         #Check if user has selected a file
-        if json_file_path == r"":
+        if json_file_path == "":
             self.random_item_output.setText("Please choose a file.")
         else:
             #Grab the data from the choosen file
