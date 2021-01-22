@@ -43,26 +43,31 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         #User Input
         how_many = self.how_many_box.text()
         kind = self.kind_box.text()
-        #Total variables
-        total = 0
-        output_str = how_many + "d" + kind + ": "
-        
-        #Roll the choosen dice how_many times
-        for x in range (1, int(how_many) + 1):
-            #Pick a random number
-            number = random.randint(1, int(kind))
-            #Add number to the total
-            total += number
-            #Add the number to the output string
-            output_str = output_str + (str(number))
-            #Add addition symbols between the numbers in the string
-            if 0 < x < int(how_many):
-                output_str = output_str + (" + ")
 
-        #Add on the total to the output string
-        output_str = output_str + (" = ") + str(total)
-        #Print out string
-        self.results_output.setText(output_str)
+        #Check if user input present
+        if how_many == "" or kind == "":
+            self.results_output.setText("Please Enter dice")
+        else:
+            #Total variables
+            total = 0
+            output_str = how_many + "d" + kind + ": "
+            
+            #Roll the choosen dice how_many times
+            for x in range (1, int(how_many) + 1):
+                #Pick a random number
+                number = random.randint(1, int(kind))
+                #Add number to the total
+                total += number
+                #Add the number to the output string
+                output_str = output_str + (str(number))
+                #Add addition symbols between the numbers in the string
+                if 0 < x < int(how_many):
+                    output_str = output_str + (" + ")
+
+            #Add on the total to the output string
+            output_str = output_str + (" = ") + str(total)
+            #Print out string
+            self.results_output.setText(output_str)
 
     #Choose a random item from the file
     def random_entry(self):
@@ -84,7 +89,6 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         for _ , _ ,file_names in os.walk("datafiles"):
             if file_names[0][-5:] == ".json":
                 self.files_list_output.insertItems(0, file_names)
-
 
 #This little chunk of code allows this python program to be either used directly or imported into another program
 if __name__ == "__main__":
