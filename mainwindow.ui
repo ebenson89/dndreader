@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>390</width>
-    <height>429</height>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,26 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="11" column="2">
-     <widget class="QTreeWidget" name="treeWidget">
-      <column>
-       <property name="text">
-        <string notr="true">1</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="how_many_box">
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="2">
+    <item row="5" column="2">
      <widget class="QLabel" name="all_files_label">
       <property name="font">
        <font>
@@ -42,7 +23,7 @@
        </font>
       </property>
       <property name="text">
-       <string>All Files</string>
+       <string>Choose File</string>
       </property>
      </widget>
     </item>
@@ -65,27 +46,41 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="dice">
+    <item row="7" column="2">
+     <widget class="QLabel" name="Random_Item_lable">
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
+        <family>Mistral</family>
+        <pointsize>28</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>d</string>
+       <string>Random Item</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QListWidget" name="files_list_output"/>
+    </item>
+    <item row="8" column="2">
+     <widget class="QPushButton" name="random_item_button">
+      <property name="text">
+       <string>Choose a random Item</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="3">
+     <widget class="QPushButton" name="roll_dice_button">
+      <property name="text">
+       <string>Roll The Dice!</string>
       </property>
      </widget>
     </item>
     <item row="9" column="2">
-     <widget class="QPushButton" name="all_files_button">
-      <property name="text">
-       <string>All files</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QLabel" name="results_output">
+     <widget class="QLabel" name="random_item_output">
       <property name="text">
        <string/>
       </property>
@@ -109,45 +104,34 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="2">
-     <widget class="QLabel" name="random_item_output">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="how_many_box">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="dice">
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>d</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="results_output">
       <property name="text">
        <string/>
       </property>
      </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="random_item_button">
-      <property name="text">
-       <string>Choose a random Item</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QLabel" name="Random_Item_lable">
-      <property name="font">
-       <font>
-        <family>Mistral</family>
-        <pointsize>28</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Random Item</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1" colspan="3">
-     <widget class="QPushButton" name="roll_dice_button">
-      <property name="text">
-       <string>Roll The Dice!</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="2">
-     <widget class="QListWidget" name="listWidget"/>
     </item>
    </layout>
   </widget>

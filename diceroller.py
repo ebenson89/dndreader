@@ -9,17 +9,24 @@ from PyQt5.QtWidgets import *
 
 qtCreatorFile = "mainwindow.ui" # GUI Design file
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-json_file_path = r"datafiles\TestMagicItems.json" #Test File
 
 class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
+        start_folder = r"datafiles\""
+        json_file_path = r""
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+        self.files_in_data_folder()
         self.roll_dice_button.clicked.connect(self.roll_dice)
         self.random_item_button.clicked.connect(self.random_entry)
-        self.all_files_button.clicked.connect(self.files_in_data_folder)
+        self.files_list_output.clicked.connect(self.choose_file)
 
+    def choose_file(self, qmodelindex):
+        item = self.files_list_output.currentItem()
+        json_file_path = start_folder + item
+        print (json_file_path)
+    
     #Pull data from file
     def get_data(self, file_name):
         #Open json file
@@ -55,21 +62,24 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     #Choose a random item from the file
     def random_entry(self):
-        #Grab the data from the choosen file
-        data_dict = self.get_data(json_file_path)
-        #Randomly choose a key
-        key = random.choice(list(data_dict.keys()))
-        #Print out key and value in a string
-        self.random_item_output.setText(key + ": " + data_dict[key])
 
+        #Check if user has selected a file
+        if json_file_path == r"":
+            self.random_item_output.setText("Please choose a file.")
+        else:
+            #Grab the data from the choosen file
+            data_dict = self.get_data(json_file_path)
+            #Randomly choose a key
+            key = random.choice(list(data_dict.keys()))
+            #Print out key and value in a string
+            self.random_item_output.setText(key + ": " + data_dict[key])
+
+    #Choose a file in the database
     def files_in_data_folder(self):
-        file_names = []
 
-        for _ , _ ,file_name in os.walk("datafiles"):
-            if file_name[0][-5:] == ".json":
-                file_names += file_name
-
-            return (file_names)
+        for _ , _ ,file_names in os.walk("datafiles"):
+            if file_names[0][-5:] == ".json":
+                self.files_list_output.insertItems(0, file_names)
 
 
 #This little chunk of code allows this python program to be either used directly or imported into another program
