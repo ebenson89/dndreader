@@ -1,2 +1,2 @@
 # dndreader
- Dice rolls and magic items
+ A program that contains a dice roller as well as a randomizer that selects random magic items, spells, and monsters.
