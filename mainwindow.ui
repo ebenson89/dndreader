@@ -147,11 +147,44 @@
      <x>0</x>
      <y>0</y>
      <width>390</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuDice_Rolling">
+    <property name="title">
+     <string>Dice Rolling</string>
+    </property>
+    <addaction name="actionDefault_Dice_Setup"/>
+   </widget>
+   <widget class="QMenu" name="menuCharacter_Creation">
+    <property name="title">
+     <string>Character Creation</string>
+    </property>
+    <addaction name="actionEvil_Method"/>
+   </widget>
+   <widget class="QMenu" name="menuRandom_Select">
+    <property name="title">
+     <string>Random Select</string>
+    </property>
+   </widget>
+   <addaction name="menuDice_Rolling"/>
+   <addaction name="menuCharacter_Creation"/>
+   <addaction name="menuRandom_Select"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionEvil_Method">
+   <property name="text">
+    <string>Evil Method</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetShortcut</enum>
+   </property>
+  </action>
+  <action name="actionDefault_Dice_Setup">
+   <property name="text">
+    <string>Default Dice Setup</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

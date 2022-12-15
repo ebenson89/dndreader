@@ -3,5 +3,6 @@
     "python.linting.flake8Enabled": false,
     "python.linting.enabled": false,
     "python.linting.mypyEnabled": false,
-    "qtForPython.designer.path": "c:\\Users\\Emily\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\qt5_applications\\Qt\\bin\\designer.exe"
+    "qtForPython.designer.path": "c:\\Users\\Emily\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\qt5_applications\\Qt\\bin\\designer.exe",
+    "python.analysis.typeCheckingMode": "basic"
 }
