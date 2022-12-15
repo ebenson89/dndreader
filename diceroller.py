@@ -5,7 +5,7 @@ import random
 import os
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import *  #Ignore wildcare error no impact on functionality
 from PyQt5.QtGui import QIntValidator
 
 start_folder = "datafiles\\"
